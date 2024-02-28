@@ -1,4 +1,5 @@
-import styled from "styled-components";
+
+import styled from 'styled-components/native'
 
 export const CardMedico = styled.View`
     width: 90%;
@@ -7,10 +8,11 @@ export const CardMedico = styled.View`
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    border: 1px;
+    /* border: 1px; */
     border-color: #496BBA;
     border-radius: 5px;
     padding: 8px;
+    elevation: 3
 `
 
 export const ImagemCardMedico = styled.Image`

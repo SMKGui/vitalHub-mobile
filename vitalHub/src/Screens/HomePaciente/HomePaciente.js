@@ -2,7 +2,7 @@ import { Container } from "../../Components/Container/Style";
 import { FaixaAzul, ImagemTexto, BemVindo, UsuarioAtual, Sino, FotoPerfilConsulta, DataUser } from "../../Components/FaixaAzul/Style";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TitleData } from "../../Components/TitleData/Style";
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import moment from "moment";
 import { StyledCalendarStrip } from "../../Components/Calendario/Style";
 import CalendarStrip from "react-native-calendar-strip";
@@ -73,6 +73,15 @@ export const HomePaciente = () => {
     const [showModalAppointment, setShowModalAppointment] = useState(false);
 
     const [showModalAgendar, setShowModalAgendar] = useState(false)
+    
+    const handleOpenModal = () => {
+        setShowModalAgendar(true);
+    };
+
+    // Função para fechar o modal
+    const handleCloseModal = () => {
+        setShowModalAgendar(false);
+    };
 
     const [statusLista, setStatusLista] = useState("pendente")
 
@@ -221,13 +230,15 @@ export const HomePaciente = () => {
 
                 <IconModal>
 
-                    <ImagemBotao
-                        source={require('../../Assets/Images/Estetoscopio.png')}/>
+                    <TouchableOpacity onPress={handleOpenModal}>
+                        <ImagemBotao source={require('../../Assets/Images/Estetoscopio.png')} />
+                    </TouchableOpacity>
                     
-                        <AgendarModal
-                            visible={showModalAgendar}
-                            setShowModalAgendar={setShowModalAgendar}
-                        />
+                    <AgendarModal
+                        visible={showModalAgendar}
+                        setShowModalAgendar={setShowModalAgendar}
+                        onClose={handleCloseModal}
+                    />
                 </IconModal>
             </ViewIcon>
 

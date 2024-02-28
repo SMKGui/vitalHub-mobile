@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native"
-import { Container } from "../../Components/Container/Style"
+import { Container, ContainerSpace } from "../../Components/Container/Style"
 import { Logo } from "../../Components/Logo/Style"
 import { Title } from "../../Components/Title/Style"
 import { Input } from "../../Components/Input/Style"
@@ -18,26 +18,29 @@ import { ContainerRow } from "../../Components/ContainerRow/Style"
 export const RedefinirSenha = () => {
     return (
         <Container>
-            <Logo
-                source={require('../../Assets/Images/VitalHub_Logo.png')}
-            />
+            <ContainerSpace>
 
-            <Title>Redefinir senha</Title>
+                <Logo
+                    source={require('../../Assets/Images/VitalHub_Logo.png')}
+                />
 
-            <SubTitle>Insira e confirme a sua nova senha</SubTitle>
+                <Title>Redefinir senha</Title>
 
-            <Input
-                placeholder="Nova senha"
-            />
+                <SubTitle>Insira e confirme a sua nova senha</SubTitle>
 
-            <Input
-                placeholder="Confirmar nova senha"
-            />
+                <Input
+                    placeholder="Nova senha"
+                />
 
-            <Button>
-                <ButtonTitle>Comfirmar nova senha</ButtonTitle>
-            </Button>
+                <Input
+                    placeholder="Confirmar nova senha"
+                />
 
+                <Button>
+                    <ButtonTitle>Comfirmar nova senha</ButtonTitle>
+                </Button>
+
+            </ContainerSpace>
         </Container>
     )
 }

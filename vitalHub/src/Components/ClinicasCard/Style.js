@@ -1,14 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components/native'
 
 export const CardClinica = styled.View`
     width: 90%;
     height: 84px;
-    border: 2px;
+    /* border: 2px; */
     border-color: #496BBA;
     border-radius: 5px;
     flex-direction: column;
     padding: 10px;
     gap: 10px;
+    elevation: 3;
 `
 
 export const ConteudoCardClinica = styled.View`

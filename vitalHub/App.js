@@ -10,7 +10,6 @@ import { RecuperarSenha } from './src/Screens/RecuperarSenha/RecuperarSenha';
 import { CodigoEmail } from './src/Screens/CodigoEmail/CodigoEmail';
 import { RedefinirSenha } from './src/Screens/RedefinirSenha/RedefinirSenha';
 import { CriarConta } from './src/Screens/CriarConta/CriarConta';
-import { ConsultaAgendada } from './src/Screens/ConsultaAgendada/ConsultaAgendada';
 import { Perfil } from './src/Screens/Perfil/Perfil';
 import { Local } from './src/Screens/Local/Local';
 import { Prontuario } from './src/Screens/Prontuario/Prontuario';
@@ -18,6 +17,7 @@ import { HomePaciente } from './src/Screens/HomePaciente/HomePaciente';
 import { SelecionarClinica } from './src/Screens/SelecionarClinica/SelecionarClinica';
 import { SelecionarMedico } from './src/Screens/SelecionarMedico/SelecionarMedico';
 import { SelecionarData } from './src/Screens/SelecionarData/SelecionarData';
+import { HomeMedico } from './src/Screens/HomeMedico/HomeMedico';
 
 const Stack = createNativeStackNavigator();
 
@@ -78,9 +78,9 @@ export default function App() {
           options={{title: "CriarConta"}}
         />
         <Stack.Screen
-          name="ConsultaAgendada"
-          component={ConsultaAgendada}
-          options={{title: "ConsultaAgendada"}}
+          name="HomeMedico"
+          component={HomeMedico}
+          options={{title: "HomeMedico"}}
         />
         <Stack.Screen
           name="Perfil"

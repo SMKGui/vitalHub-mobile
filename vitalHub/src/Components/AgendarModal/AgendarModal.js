@@ -1,5 +1,5 @@
 import { Modal } from "react-native"
-import { AppointmentModal, ButtonConsulta, ButtonTextConsulta, SubTitleModal } from "./Style"
+import { AppointmentModal, AppointmentModalView, ButtonConsulta, ButtonTextConsulta, SubTitleModal } from "./Style"
 import { Title } from "../Title/Style"
 import { FilterAppointment } from "../FilterAppointment/FilterAppointment"
 import { ProntuarioInputMenor } from "../Input/Style"
@@ -20,37 +20,40 @@ export const AgendarModal = ({
             animationType="fade"
         >
             <AppointmentModal>
-                <Title>Agendar consulta</Title>
+                <AppointmentModalView>
 
-                <SubTitleModal>Qual o nível da consulta</SubTitleModal>
+                    <Title>Agendar consulta</Title>
+
+                    <SubTitleModal>Qual o nível da consulta</SubTitleModal>
 
 
-                <FilterAppointment>
-                    <ButtonConsulta>
-                        <ButtonTextConsulta>Rotina</ButtonTextConsulta>
-                    </ButtonConsulta>
-                    <ButtonConsulta>
-                        <ButtonTextConsulta>Exame</ButtonTextConsulta>
-                    </ButtonConsulta>
-                    <ButtonConsulta>
-                        <ButtonTextConsulta>Urgência</ButtonTextConsulta>
-                    </ButtonConsulta>
-                </FilterAppointment>
+                    <FilterAppointment>
+                        <ButtonConsulta>
+                            <ButtonTextConsulta>Rotina</ButtonTextConsulta>
+                        </ButtonConsulta>
+                        <ButtonConsulta>
+                            <ButtonTextConsulta>Exame</ButtonTextConsulta>
+                        </ButtonConsulta>
+                        <ButtonConsulta>
+                            <ButtonTextConsulta>Urgência</ButtonTextConsulta>
+                        </ButtonConsulta>
+                    </FilterAppointment>
 
-                <SubTitleModal>Informe a localização desejada</SubTitleModal>
+                    <SubTitleModal>Informe a localização desejada</SubTitleModal>
 
-                <ProntuarioInputMenor
-                    placeholder="Informe a localização"
-                />
+                    <ProntuarioInputMenor
+                        placeholder="Informe a localização"
+                    />
 
-                <Button>
-                    <ButtonTitle>Continuar</ButtonTitle>
-                </Button>
+                    <Button>
+                        <ButtonTitle>Continuar</ButtonTitle>
+                    </Button>
 
-                <ButtonSecondary onPress={() => setShowModalAgendar(false)}>
-                    <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
-                </ButtonSecondary>
+                    <ButtonSecondary onPress={() => setShowModalAgendar(false)}>
+                        <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
+                    </ButtonSecondary>
 
+                </AppointmentModalView>
             </AppointmentModal>
 
 

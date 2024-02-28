@@ -28,4 +28,12 @@ export const ContainerClinicas = styled.View`
     width: 90%;
     margin-top: 30px;
     gap: 20px;
+    overflow: hidden;
+`
+
+export const ContainerSpace = styled.View`
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 `

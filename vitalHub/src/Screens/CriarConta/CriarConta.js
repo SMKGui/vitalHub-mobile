@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native"
-import { Container } from "../../Components/Container/Style"
+import { Container, ContainerSpace } from "../../Components/Container/Style"
 import { Logo } from "../../Components/Logo/Style"
 import { Title } from "../../Components/Title/Style"
 import { Input } from "../../Components/Input/Style"
@@ -27,35 +27,38 @@ export const CriarConta = () => {
 
     return (
         <Container>
-            <Logo
-                source={require('../../Assets/Images/VitalHub_Logo.png')}
-            />
+            <ContainerSpace>
 
-            <Title>Criar Conta</Title>
+                <Logo
+                    source={require('../../Assets/Images/VitalHub_Logo.png')}
+                />
 
-            <SubTitle>Insira seu endereço de e-mail e senha para realizar seu cadastro.</SubTitle>
+                <Title>Criar Conta</Title>
 
-            <Input
-                placeholder="Usuário ou email"
-            />
+                <SubTitle>Insira seu endereço de e-mail e senha para realizar seu cadastro.</SubTitle>
 
-            <Input
-                placeholder="Senha"
-            />
+                <Input
+                    placeholder="Usuário ou email"
+                />
 
-            <Input
-                placeholder="Confirmar senha"
-            />
+                <Input
+                    placeholder="Senha"
+                />
 
-            <Button>
-                <ButtonTitle>Cadastrar</ButtonTitle>
-            </Button>
+                <Input
+                    placeholder="Confirmar senha"
+                />
 
-            <TouchableOpacity onPress={Cancelar}>
-            <ContentAccount>
-                <TextAccountLink>Cancelar</TextAccountLink>
-            </ContentAccount>
-            </TouchableOpacity>
+                <Button>
+                    <ButtonTitle>Cadastrar</ButtonTitle>
+                </Button>
+
+                <TouchableOpacity onPress={Cancelar}>
+                    <ContentAccount>
+                        <TextAccountLink>Cancelar</TextAccountLink>
+                    </ContentAccount>
+                </TouchableOpacity>
+            </ContainerSpace>
         </Container>
     )
 }

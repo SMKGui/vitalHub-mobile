@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native"
-import { Container } from "../../Components/Container/Style"
+import { Container, ContainerSpace } from "../../Components/Container/Style"
 import { Logo } from "../../Components/Logo/Style"
 import { Title } from "../../Components/Title/Style"
 import { Input } from "../../Components/Input/Style"
@@ -18,9 +18,11 @@ import { ContainerRow } from "../../Components/ContainerRow/Style"
 export const CodigoEmail = () => {
     return (
         <Container>
+            <ContainerSpace>
+
             <Logo
                 source={require('../../Assets/Images/VitalHub_Logo.png')}
-            />
+                />
 
             <Title>Verifique seu e-mail</Title>
 
@@ -41,6 +43,7 @@ export const CodigoEmail = () => {
                 <TextAccountLink>Reenviar código</TextAccountLink>
             </ContentAccount>
 
+                </ContainerSpace>
                 
 
         </Container>

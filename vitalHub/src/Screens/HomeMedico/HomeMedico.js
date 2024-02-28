@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export const ConsultaAgendada = () => {
+export const HomeMedico = () => {
 
   const [showModalCancel, setShowModalCancel] = useState(false);
   const [showModalAppointment, setShowModalAppointment] = useState(false);

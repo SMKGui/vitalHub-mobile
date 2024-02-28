@@ -1,19 +1,31 @@
 import RNPickerSelect from "react-native-picker-select";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 import { SubTitleData, Title, TitleData } from "../../Components/Title/Style"
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import { Container } from "../../Components/Container/Style";
+import { Container, ContainerSpace } from "../../Components/Container/Style";
 import { useEffect, useState } from "react";
 
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { Button } from "../../Components/Button/Style";
 import { ButtonTitle } from "../../Components/ButtonTitle/Style";
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style";
+import { ConfirmarModal } from "../../Components/ConfirmarModal/ConfirmarModal";
 
 export const SelecionarData = () => {
+
+    const [showModalConfirm, setShowModalConfirm] = useState(false);
+
+    const handleOpenModal = () => {
+        setShowModalConfirm(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModalConfirm(false);
+    };
+
     const [selected, setSelected] = useState("");
 
     const currentDate = new Date();
@@ -40,81 +52,91 @@ export const SelecionarData = () => {
 
     return (
         <Container>
+            <ContainerSpace>
 
-            <Title>Selecionar data</Title>
 
-            <Calendar
-                style={{
-                    width: 360,
-                    alignSelf: 'center',
-                    backgroundColor: '#FAFAFA'
-                }}
+                <Title>Selecionar data</Title>
 
-                onDayPress={(day) => {
-                    setSelected(day.dateString);
-                }}
-                markedDates={{
-                    [selected]: {
-                        selected: true,
-                        disableTouchEvent: true
-                    },
-                }}
-
-                minDate={startingDate}
-
-                theme={{
-                    calendarBackground: '#FAFAFA',
-                    arrowColor: '#49B3BA',
-                    textDisabledColor: '#C6C5CE',
-                    todayTextColor: '#5F5C6B',
-                    selectedDayTextColor: '#FAFAFA',
-                    selectedDayBackgroundColor: '#60BFC5',
-
-                    textDayFontSize: 16,
-                    textMonthFontSize: 20,
-                    textDayHeaderFontSize: 12,
-
-                    textDayStyle: { "color": '#5F5C6B' },
-
-                    textDayFontFamily: "Quicksand_600SemiBold",
-                    textDayHeaderFontFamily: "Quicksand_600SemiBold",
-                    textMonthFontFamily: "MontserratAlternates_600SemiBold",
-                }}
-            />
-
-            <SubTitleData>Selecione um horário disponível</SubTitleData>
-
-            <View style={{ width: 316 }}>
-                <RNPickerSelect
-                    style={style}
-                    Icon={() => {
-                        return <FontAwesomeIcon icon={faCaretDown} color='#34898F' size={22} />
+                <Calendar
+                    style={{
+                        width: 360,
+                        alignSelf: 'center',
+                        backgroundColor: '#FAFAFA'
                     }}
-                    placeholder={{
-                        label: 'Selecione um valor',
-                        value: null,
-                        color: '#34898F'
+
+                    onDayPress={(day) => {
+                        setSelected(day.dateString);
                     }}
-                    onValueChange={(value) => console.log(value)}
-                    items={[
-                        { label: "JavaScript", value: "JavaScript" },
-                        { label: "TypeScript", value: "TypeScript" },
-                        { label: "Python", value: "Python" },
-                        { label: "Java", value: "Java" },
-                        { label: "C++", value: "C++" },
-                        { label: "C", value: "C" },
-                    ]}
+                    markedDates={{
+                        [selected]: {
+                            selected: true,
+                            disableTouchEvent: true
+                        },
+                    }}
+
+                    minDate={startingDate}
+
+                    theme={{
+                        calendarBackground: '#FAFAFA',
+                        arrowColor: '#49B3BA',
+                        textDisabledColor: '#C6C5CE',
+                        todayTextColor: '#5F5C6B',
+                        selectedDayTextColor: '#FAFAFA',
+                        selectedDayBackgroundColor: '#60BFC5',
+
+                        textDayFontSize: 16,
+                        textMonthFontSize: 20,
+                        textDayHeaderFontSize: 12,
+
+                        textDayStyle: { "color": '#5F5C6B' },
+
+                        textDayFontFamily: "Quicksand_600SemiBold",
+                        textDayHeaderFontFamily: "Quicksand_600SemiBold",
+                        textMonthFontFamily: "MontserratAlternates_600SemiBold",
+                    }}
                 />
-            </View>
 
-            <Button>
-                <ButtonTitle>Confirmar</ButtonTitle>
-            </Button>
+                <SubTitleData>Selecione um horário disponível</SubTitleData>
 
-            <ContentAccount>
-                <TextAccountLink>Cancelar</TextAccountLink>
-            </ContentAccount>
+                <View style={{ width: 316 }}>
+                    <RNPickerSelect
+                        style={style}
+                        Icon={() => {
+                            return <FontAwesomeIcon icon={faCaretDown} color='#34898F' size={22} />
+                        }}
+                        placeholder={{
+                            label: 'Selecione um valor',
+                            value: null,
+                            color: '#34898F'
+                        }}
+                        onValueChange={(value) => console.log(value)}
+                        items={[
+                            { label: "JavaScript", value: "JavaScript" },
+                            { label: "TypeScript", value: "TypeScript" },
+                            { label: "Python", value: "Python" },
+                            { label: "Java", value: "Java" },
+                            { label: "C++", value: "C++" },
+                            { label: "C", value: "C" },
+                        ]}
+                    />
+                </View>
 
+                <Button>
+                    <TouchableOpacity onPress={handleOpenModal}>
+                        <ButtonTitle>Confirmar</ButtonTitle>
+                    </TouchableOpacity>
+                    <ConfirmarModal
+                        visible={showModalConfirm}
+                        setShowModalConfirm={setShowModalConfirm}
+                        onClose={handleCloseModal}
+                    />
+                </Button>
+
+                <ContentAccount>
+                    <TextAccountLink>Cancelar</TextAccountLink>
+                </ContentAccount>
+
+            </ContainerSpace>
         </Container>
     )
 }

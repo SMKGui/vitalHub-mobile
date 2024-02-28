@@ -26,3 +26,19 @@ export const SubTitleData = styled(TitleProntuario)`
     font-size: 14px;
     color: #000000;
 `
+
+export const ModalSubTitle = styled(TitleProntuario)`
+    font-size: 16px;
+    color: #000000;
+`
+
+export const ModalContentSubTitle = styled(TitleProntuario)`
+    font-size: 16px;
+    color: #33303E;
+`
+
+export const ModalInfo = styled.Text`
+    font-size: 14px;
+    font-family: "Quicksand_500Medium";
+    color: #4E4B59;
+`

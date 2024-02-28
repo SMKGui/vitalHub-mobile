@@ -12,6 +12,9 @@ export const ButtonConsulta = styled.TouchableOpacity`
     border-color: #60BFC5;
     border-radius: 5px;
     align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 40px;
 `
 
 export const SubTitleModal = styled.Text`
@@ -24,4 +27,12 @@ export const ButtonTextConsulta = styled.Text`
     font-size: 14px;
     font-family: "MontserratAlternates_600SemiBold";
     color: #34898F;
+`
+
+export const AppointmentModalView = styled.View`
+    align-items: center;
+    justify-content: center;
+    background-color: #FBFBFB;
+    width: 100%;
+    height: 518px;
 `
