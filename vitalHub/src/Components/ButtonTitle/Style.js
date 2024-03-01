@@ -31,3 +31,9 @@ export const ButtonSecondaryTitle = styled(ButtonTitle)`
     color: #344f8f;
 `
 
+export const CameraButtonTitle = styled.Text`
+    font-size: 14px;
+    font-family: "MontserratAlternates_700Bold";
+    color: #FFFFFF;
+`
+

@@ -4,14 +4,17 @@ export const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
     background-color: #fafafa;
+    gap: 5px;
 `
 
 export const ContainerLeft = styled(Container)`
     align-items: flex-start;
 `
 
-export const ContainerRow = styled.SafeAreaView`
+export const ContainerRow = styled.View`
     flex-direction: row;
+    gap: 10px;
+    align-items: center;
 `
 
 export const ContainerConsultas = styled.SafeAreaView`

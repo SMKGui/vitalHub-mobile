@@ -11,9 +11,9 @@ import { ButtonTitle } from "../../Components/ButtonTitle/Style"
 
 export const Prontuario = () => {
     return (
-        <Container>
+        <ScrollView>
+            <Container>
 
-            <ScrollView>
 
                 <FotoPerfil
                     source={require('../../Assets/Images/Richard.png')}
@@ -56,8 +56,8 @@ export const Prontuario = () => {
                     <ButtonText>Cancelar</ButtonText>
                 </ButtonCard>
 
-            </ScrollView>
 
-        </Container>
+            </Container>
+        </ScrollView>
     )
 }

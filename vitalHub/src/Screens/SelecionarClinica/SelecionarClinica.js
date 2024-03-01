@@ -2,7 +2,7 @@ import { ButtonCard, ButtonText } from "../../Components/AppointmentCard/Style";
 import { Button } from "../../Components/Button/Style";
 import { ButtonTitle } from "../../Components/ButtonTitle/Style";
 import { Avaliacao, AvaliacaoText, CardClinica, CidadeClinica, ConteudoCardClinica, DiaSemana, DiaSemanaText } from "../../Components/ClinicasCard/Style"
-import { Container, ContainerClinicas } from "../../Components/Container/Style"
+import { Container, ContainerClinicas, ContainerSpace } from "../../Components/Container/Style"
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style";
 import { Title, TitleClinica } from "../../Components/Title/Style"
 import { AntDesign } from '@expo/vector-icons';
@@ -11,6 +11,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 export const SelecionarClinica = () => {
     return(
         <Container>
+            <ContainerSpace>
+
 
         <Title>Selecionar clínica</Title>
 
@@ -90,6 +92,7 @@ export const SelecionarClinica = () => {
         </ContentAccount>
 
 
+            </ContainerSpace>
         </Container>
     )
 }

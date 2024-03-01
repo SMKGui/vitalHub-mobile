@@ -18,6 +18,7 @@ import { SelecionarClinica } from './src/Screens/SelecionarClinica/SelecionarCli
 import { SelecionarMedico } from './src/Screens/SelecionarMedico/SelecionarMedico';
 import { SelecionarData } from './src/Screens/SelecionarData/SelecionarData';
 import { HomeMedico } from './src/Screens/HomeMedico/HomeMedico';
+import { ProntuarioPronto } from './src/Screens/ProntuarioPronto/ProntuarioPronto';
 
 const Stack = createNativeStackNavigator();
 
@@ -116,6 +117,11 @@ export default function App() {
           name="SelecionarData"
           component={SelecionarData}
           options={{title: "SelecionarData"}}
+        />
+        <Stack.Screen
+          name="ProntuarioPronto"
+          component={ProntuarioPronto}
+          options={{title: "ProntuarioPronto"}}
         />
       </Stack.Navigator>
     </NavigationContainer>

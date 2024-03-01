@@ -67,3 +67,26 @@ export const ViewIcon = styled.View`
     left: 150px;
     bottom: 30px;
 `
+
+export const CameraButton = styled.TouchableOpacity`
+    width: 172px;
+    height: 44px;
+    background-color: #49B3BA;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+`
+
+export const CancelarButton = styled.TouchableOpacity`
+    font-size: 12px;
+    color: #C81D25;
+    font-family: "MontserratAlternates_500Medium";
+`
+
+export const CancelarText = styled.Text`
+    font-size: 12px;
+    color: #C81D25;
+    font-family: "MontserratAlternates_500Medium";
+`

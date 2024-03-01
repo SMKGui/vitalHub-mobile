@@ -1,60 +1,63 @@
 import { Button } from "../../Components/Button/Style"
 import { ButtonTitle } from "../../Components/ButtonTitle/Style"
 import { CardMedico, CardMedicoContent, ImagemCardMedico, TextCardMedico } from "../../Components/CardMedico/Style"
-import { Container, ContainerClinicas } from "../../Components/Container/Style"
+import { Container, ContainerClinicas, ContainerSpace } from "../../Components/Container/Style"
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { Title, TitleClinica } from "../../Components/Title/Style"
 
 export const SelecionarMedico = () => {
-    return(
+    return (
         <Container>
+            <ContainerSpace>
 
-        <Title>Selecionar Médico</Title>
 
-        <ContainerClinicas>
-            <CardMedico>
-                <ImagemCardMedico
-                    source={require('../../Assets/Images/DraAlessandra.png')}
-                />
-                <CardMedicoContent>
+                <Title>Selecionar Médico</Title>
 
-                <TitleClinica>Dra Alessandra</TitleClinica>
+                <ContainerClinicas>
+                    <CardMedico>
+                        <ImagemCardMedico
+                            source={require('../../Assets/Images/DraAlessandra.png')}
+                        />
+                        <CardMedicoContent>
 
-                <TextCardMedico>Demartologa, Esteticista</TextCardMedico>
-                </CardMedicoContent>
-            </CardMedico>
-            <CardMedico>
-                <ImagemCardMedico
-                    source={require('../../Assets/Images/DrKumushiro.png')}
-                />
-                <CardMedicoContent>
+                            <TitleClinica>Dra Alessandra</TitleClinica>
 
-                <TitleClinica>Dr Kumushiro</TitleClinica>
+                            <TextCardMedico>Demartologa, Esteticista</TextCardMedico>
+                        </CardMedicoContent>
+                    </CardMedico>
+                    <CardMedico>
+                        <ImagemCardMedico
+                            source={require('../../Assets/Images/DrKumushiro.png')}
+                        />
+                        <CardMedicoContent>
 
-                <TextCardMedico>Cirurgião, Cardiologista</TextCardMedico>
-                </CardMedicoContent>
-            </CardMedico>
-            <CardMedico>
-                <ImagemCardMedico
-                    source={require('../../Assets/Images/DrRodrigo.png')}
-                />
-                <CardMedicoContent>
+                            <TitleClinica>Dr Kumushiro</TitleClinica>
 
-                <TitleClinica>Dr Rodrigo Santos</TitleClinica>
+                            <TextCardMedico>Cirurgião, Cardiologista</TextCardMedico>
+                        </CardMedicoContent>
+                    </CardMedico>
+                    <CardMedico>
+                        <ImagemCardMedico
+                            source={require('../../Assets/Images/DrRodrigo.png')}
+                        />
+                        <CardMedicoContent>
 
-                <TextCardMedico>Clínico, Pediatra</TextCardMedico>
-                </CardMedicoContent>
-            </CardMedico>
-        </ContainerClinicas>
+                            <TitleClinica>Dr Rodrigo Santos</TitleClinica>
 
-        <Button>
-            <ButtonTitle>Continuar</ButtonTitle>
-        </Button>
+                            <TextCardMedico>Clínico, Pediatra</TextCardMedico>
+                        </CardMedicoContent>
+                    </CardMedico>
+                </ContainerClinicas>
 
-        <ContentAccount>
-            <TextAccountLink>Cancelar</TextAccountLink>
-        </ContentAccount>
+                <Button>
+                    <ButtonTitle>Continuar</ButtonTitle>
+                </Button>
 
+                <ContentAccount>
+                    <TextAccountLink>Cancelar</TextAccountLink>
+                </ContentAccount>
+
+            </ContainerSpace>
         </Container>
     )
 }
