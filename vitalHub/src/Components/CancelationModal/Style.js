@@ -12,7 +12,8 @@ export const ModalContent = styled.View`
     width: 90%;
     border-radius: 10px;
     background-color: #fff;
-    align-items: center;
+    gap: 10px;
+    /* align-items: center; */
 `
 
 export const ModalText = styled.Text`

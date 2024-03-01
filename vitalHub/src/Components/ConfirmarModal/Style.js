@@ -9,10 +9,16 @@ export const ConfirmarModalView = styled.View`
     align-items: center;
     flex: 1;
     padding: 10px;
-    gap: 10px;
+    gap: 20px;
 `
 
 export const ConfirmarConteudoView = styled.View`
     align-items: flex-start;
     justify-content: space-between;
+`
+
+export const ConfirmarModalTitleView = styled.View`
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 `

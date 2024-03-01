@@ -1,5 +1,5 @@
 import { Modal } from "react-native"
-import { ConfirmarConteudoView, ConfirmarModalView } from "./Style"
+import { ConfirmarConteudoView, ConfirmarModalTitleView, ConfirmarModalView } from "./Style"
 import { ModalContent } from "../CancelationModal/Style"
 import { ModalContentSubTitle, ModalInfo, ModalSubTitle, Title } from "../Title/Style"
 import { Button, ButtonSecondary } from "../Button/Style"
@@ -20,22 +20,32 @@ export const ConfirmarModal = ({
         >
             <ConfirmarModalView>
                 <ModalContent>
+                    <ConfirmarModalTitleView>
+
                     <Title>Agendar Consulta</Title>
 
                     <ModalSubTitle>Consulte os dados selecionados para a sua consulta</ModalSubTitle>
+                    </ConfirmarModalTitleView>
 
                     <ConfirmarConteudoView>
 
                     <ModalContentSubTitle>Data da consulta</ModalContentSubTitle>
                     <ModalInfo>1 de Novembro de 2023</ModalInfo>
 
+                    </ConfirmarConteudoView>
+
+                    <ConfirmarConteudoView>
                     <ModalContentSubTitle>Médico(a) da consulta</ModalContentSubTitle>
                     <ModalInfo>Dra Alessandra</ModalInfo>
                     <ModalInfo>Demartologa, Esteticista</ModalInfo>
+                    </ConfirmarConteudoView>
 
+                    <ConfirmarConteudoView>
                     <ModalContentSubTitle>Local da consulta</ModalContentSubTitle>
                     <ModalInfo>São Paulo, SP</ModalInfo>
+                    </ConfirmarConteudoView>
 
+                    <ConfirmarConteudoView>
                     <ModalContentSubTitle>Tipo da consulta</ModalContentSubTitle>
                     <ModalInfo>Rotina</ModalInfo>
                     </ConfirmarConteudoView>
