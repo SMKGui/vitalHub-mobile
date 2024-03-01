@@ -65,7 +65,8 @@ export const ProntuarioPronto = () => {
                 <Divider></Divider>
 
                 <CaixaProntuario>
-                    <TextCaixaProntuario>Resultado do exame de sangue : tudo normal</TextCaixaProntuario>
+                    <TextCaixaProntuario>Resultado do exame de sangue:</TextCaixaProntuario>
+                    <TextCaixaProntuario>tudo normal</TextCaixaProntuario>
                 </CaixaProntuario>
 
                 <ContentAccount>
