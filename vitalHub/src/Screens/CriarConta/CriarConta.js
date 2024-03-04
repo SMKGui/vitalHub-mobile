@@ -53,11 +53,11 @@ export const CriarConta = () => {
                     <ButtonTitle>Cadastrar</ButtonTitle>
                 </Button>
 
-                <TouchableOpacity onPress={Cancelar}>
-                    <ContentAccount>
-                        <TextAccountLink>Cancelar</TextAccountLink>
-                    </ContentAccount>
-                </TouchableOpacity>
+
+                <ContentAccount onPress={Cancelar}>
+                    <TextAccountLink>Cancelar</TextAccountLink>
+                </ContentAccount>
+
             </ContainerSpace>
         </Container>
     )

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const CardClinica = styled.View`
+export const CardClinica = styled.TouchableOpacity`
     width: 90%;
     height: 84px;
     /* border: 2px; */

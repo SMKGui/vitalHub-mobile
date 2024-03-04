@@ -41,10 +41,10 @@ export const ProntuarioModal = ({
                     </IdadeEmail>
 
                     {/* button */}
-                    <ButtonModal>
-                        <TouchableOpacity onPress={Prontuario}>
+                    <ButtonModal onPress={Prontuario}>
+                       
                         <ButtonTitle>Inserir prontuário</ButtonTitle>
-                        </TouchableOpacity>
+                       
                     </ButtonModal>
 
                     {/* button cancel */}

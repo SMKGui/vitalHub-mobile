@@ -1,3 +1,4 @@
+import { TouchableOpacity } from "react-native";
 import { ButtonCard, ButtonText } from "../../Components/AppointmentCard/Style";
 import { Button } from "../../Components/Button/Style";
 import { ButtonTitle } from "../../Components/ButtonTitle/Style";
@@ -7,8 +8,17 @@ import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount
 import { Title, TitleClinica } from "../../Components/Title/Style"
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native"
+import { SelecionarMedico } from "../SelecionarMedico/SelecionarMedico";
 
 export const SelecionarClinica = () => {
+
+    const Navigation = useNavigation();
+
+    const Continuar = () => {
+        Navigation.navigate(SelecionarMedico)
+    }
+
     return(
         <Container>
             <ContainerSpace>
@@ -17,7 +27,9 @@ export const SelecionarClinica = () => {
         <Title>Selecionar clínica</Title>
 
         <ContainerClinicas>
+
             <CardClinica>
+            
                 <ConteudoCardClinica>
                     <TitleClinica>Clínica Natureh</TitleClinica>
                     <Avaliacao>
@@ -32,6 +44,7 @@ export const SelecionarClinica = () => {
                         <DiaSemanaText>Seg-Sex</DiaSemanaText>
                     </DiaSemana>
                 </ConteudoCardClinica>
+          
             </CardClinica>
             <CardClinica>
                 <ConteudoCardClinica>
@@ -83,7 +96,7 @@ export const SelecionarClinica = () => {
             </CardClinica>
         </ContainerClinicas>
 
-        <Button>
+        <Button onPress={Continuar}>
             <ButtonTitle>Continuar</ButtonTitle>
         </Button>
 

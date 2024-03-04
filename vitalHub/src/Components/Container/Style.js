@@ -40,3 +40,14 @@ export const ContainerSpace = styled.View`
     gap: 10px;
     width: 100%;
 `
+
+export const ContainerLocal = styled.View`
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    width: 180px;
+`
+
+export const ContainerLocalEndereco = styled(ContainerLocal)`
+    width: 370px;
+`

@@ -6,12 +6,21 @@ import { ProntuarioInputMenor } from "../Input/Style"
 import { Button, ButtonSecondary } from "../Button/Style"
 import { ButtonSecondaryTitle, ButtonTitle } from "../ButtonTitle/Style"
 import { ButtonCard, ButtonText } from "../AppointmentCard/Style"
+import { useNavigation } from "@react-navigation/native"
+import { SelecionarClinica } from "../../Screens/SelecionarClinica/SelecionarClinica"
 
 export const AgendarModal = ({
     visible,
     setShowModalAgendar,
     ...rest
 }) => {
+
+    const Navigation = useNavigation();
+
+    const Continuar = () => {
+        Navigation.navigate(SelecionarClinica)
+    }
+
     return (
         <Modal
             {...rest}
@@ -45,7 +54,7 @@ export const AgendarModal = ({
                         placeholder="Informe a localização"
                     />
 
-                    <Button>
+                    <Button onPress={Continuar}>
                         <ButtonTitle>Continuar</ButtonTitle>
                     </Button>
 

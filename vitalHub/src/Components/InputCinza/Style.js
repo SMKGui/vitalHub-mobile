@@ -17,5 +17,5 @@ export const InputCinza = styled.TextInput.attrs({
 `
 
 export const InputCinzaMenor = styled(InputCinza)`
-    width: 40%;
+    width: 100%;
 `

@@ -1,7 +1,7 @@
 
 import styled from 'styled-components/native'
 
-export const CardMedico = styled.View`
+export const CardMedico = styled.TouchableOpacity`
     width: 90%;
     height: 102px;
     flex-direction: row;

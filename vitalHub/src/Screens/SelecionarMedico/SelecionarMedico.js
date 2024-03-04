@@ -4,8 +4,17 @@ import { CardMedico, CardMedicoContent, ImagemCardMedico, TextCardMedico } from 
 import { Container, ContainerClinicas, ContainerSpace } from "../../Components/Container/Style"
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { Title, TitleClinica } from "../../Components/Title/Style"
+import { SelecionarData } from "../SelecionarData/SelecionarData"
+import { useNavigation } from "@react-navigation/native"
 
 export const SelecionarMedico = () => {
+
+    const Navigation = useNavigation();
+
+    const Continuar = () => {
+        Navigation.navigate(SelecionarData)
+    }
+
     return (
         <Container>
             <ContainerSpace>
@@ -49,7 +58,7 @@ export const SelecionarMedico = () => {
                     </CardMedico>
                 </ContainerClinicas>
 
-                <Button>
+                <Button onPress={Continuar}>
                     <ButtonTitle>Continuar</ButtonTitle>
                 </Button>
 

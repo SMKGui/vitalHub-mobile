@@ -10,8 +10,18 @@ import { CameraButton, CancelarButton, CancelarText } from "../../Components/But
 import { CameraButtonTitle } from "../../Components/ButtonTitle/Style"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
+import { HomePaciente } from "../HomePaciente/HomePaciente"
+import { useNavigation } from "@react-navigation/native"
+
 
 export const ProntuarioPronto = () => {
+
+    const Navigation = useNavigation();
+
+    const Voltar = () => {
+        Navigation.navigate(HomePaciente)
+    }
+
     return (
         <ScrollView>
 
@@ -69,7 +79,7 @@ export const ProntuarioPronto = () => {
                     <TextCaixaProntuario>tudo normal</TextCaixaProntuario>
                 </CaixaProntuario>
 
-                <ContentAccount>
+                <ContentAccount onPress={Voltar}>
                     <TextAccountLink>Voltar</TextAccountLink>
                 </ContentAccount>
             </Container>

@@ -1,6 +1,6 @@
 import { Modal } from "react-native"
 import { ConfirmarConteudoView, ConfirmarModalTitleView, ConfirmarModalView } from "./Style"
-import { ModalContent } from "../CancelationModal/Style"
+import { ModalContent, ModalContentConfirmar } from "../CancelationModal/Style"
 import { ModalContentSubTitle, ModalInfo, ModalSubTitle, Title } from "../Title/Style"
 import { Button, ButtonSecondary } from "../Button/Style"
 import { ButtonSecondaryTitle, ButtonTitle } from "../ButtonTitle/Style"
@@ -19,7 +19,7 @@ export const ConfirmarModal = ({
             animationType="fade"
         >
             <ConfirmarModalView>
-                <ModalContent>
+                <ModalContentConfirmar>
                     <ConfirmarModalTitleView>
 
                     <Title>Agendar Consulta</Title>
@@ -58,7 +58,7 @@ export const ConfirmarModal = ({
                         <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                     </ButtonSecondary>
                     
-                </ModalContent>
+                </ModalContentConfirmar>
             </ConfirmarModalView>
 
         </Modal>
