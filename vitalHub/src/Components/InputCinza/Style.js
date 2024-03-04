@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputCinza = styled.TextInput.attrs({
     placeholderTextColor: "#33303E"
 })`
-    width: 90%;
+    width: 100%;
     height: 53px;
     padding: 16px;
     margin-top: 15px;

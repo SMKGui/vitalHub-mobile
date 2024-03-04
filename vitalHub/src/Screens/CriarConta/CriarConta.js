@@ -37,6 +37,7 @@ export const CriarConta = () => {
 
                 <SubTitle>Insira seu endereço de e-mail e senha para realizar seu cadastro.</SubTitle>
 
+                </ContainerSpace>
                 <Input
                     placeholder="Usuário ou email"
                 />
@@ -58,7 +59,6 @@ export const CriarConta = () => {
                     <TextAccountLink>Cancelar</TextAccountLink>
                 </ContentAccount>
 
-            </ContainerSpace>
         </Container>
     )
 }

@@ -2,7 +2,7 @@
 import styled from 'styled-components/native'
 
 export const CardMedico = styled.TouchableOpacity`
-    width: 90%;
+    width: 100%;
     height: 102px;
     flex-direction: row;
     justify-content: space-between;

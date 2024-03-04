@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CaixaProntuario = styled.View`
-    width:90%;
+    width:100%;
     height:121px;
     padding:16px;
     margin-top:15px;

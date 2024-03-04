@@ -7,9 +7,17 @@ export const Container = styled.SafeAreaView`
     gap: 5px;
 `
 
-export const ContainerLeft = styled(Container)`
+export const ContainerLeft = styled.View`
     align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
 `
+
+export const ContainerLeftPaddingLeft = styled(ContainerLeft)`
+    padding: 0px 0px 10px 20px;
+`
+
 
 export const ContainerRow = styled.View`
     flex-direction: row;
@@ -37,7 +45,7 @@ export const ContainerClinicas = styled.View`
 export const ContainerSpace = styled.View`
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
 `
 

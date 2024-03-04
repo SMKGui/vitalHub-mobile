@@ -1,4 +1,4 @@
-import { Container } from "../../Components/Container/Style"
+import { Container, ContainerSpace } from "../../Components/Container/Style"
 import { Logo } from "../../Components/Logo/Style"
 import { Title } from "../../Components/Title/Style"
 import { Input } from "../../Components/Input/Style"
@@ -9,18 +9,21 @@ import { SubTitle } from "../../Components/SubTitle/Style"
 export const RecuperarSenha = () => {
     return (
         <Container>
-            <Logo
-                source={require('../../Assets/Images/VitalHub_Logo.png')}
-            />
+            <ContainerSpace>
 
-            <Title>Recuperar Senha</Title>
+                <Logo
+                    source={require('../../Assets/Images/VitalHub_Logo.png')}
+                />
 
-            <SubTitle>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</SubTitle>
+                <Title>Recuperar Senha</Title>
 
-            <Input
-                placeholder="Usuário ou E-mail"
-            />
+                <SubTitle>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</SubTitle>
 
+                <Input
+                    placeholder="Usuário ou E-mail"
+                />
+
+            </ContainerSpace>
 
             <Button>
                 <ButtonTitle>Continuar</ButtonTitle>

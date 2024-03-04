@@ -1,67 +1,86 @@
-import { Container, ContainerRow, ContainerLeft } from "../../Components/Container/Style";
+import { Container, ContainerRow, ContainerLeft, ContainerLocal } from "../../Components/Container/Style";
 import { FotoPerfil } from "../../Components/FotoPerfil/Style";
 import { SubTitle } from "../../Components/SubTitle/Style";
 import { Title } from "../../Components/Title/Style";
 import { TitleComponent } from "../../Components/TitleComponent/TitleComponent";
 import { InputCinza, InputCinzaMenor } from "../../Components/InputCinza/Style";
-import { Button} from "../../Components/Button/Style";
+import { Button } from "../../Components/Button/Style";
 import { ButtonTitle } from "../../Components/ButtonTitle/Style";
+import { ScrollView } from "react-native";
 
 export const Perfil = () => {
     return (
 
-        <ContainerLeft>
+        <ScrollView>
 
-            <FotoPerfil
-                source={require('../../Assets/Images/Richard.png')}
-            />
+            <Container>
 
-            <Title>Richard Kosta</Title>
-
-            <SubTitle>richard.kosta@gmail.com</SubTitle>
-
-            <TitleComponent>Data de nascimento</TitleComponent>
-
-            <InputCinza
-                placeholder="04/05/1999"
-            />
-
-            <TitleComponent>CPF</TitleComponent>
-
-            <InputCinza
-                placeholder="85968457319"
-            />
-
-            <TitleComponent>Endereço</TitleComponent>
-
-            <InputCinza
-                placeholder="Rua Vicenso Silva, 987"
-            />
-
-            <ContainerRow>
-
-                <TitleComponent>CEP</TitleComponent>
-
-                <InputCinzaMenor
-                    placeholder="06548-909"
+                <FotoPerfil
+                    source={require('../../Assets/Images/Richard.png')}
                 />
 
-                <TitleComponent>Cidade</TitleComponent>
+                <Title>Richard Kosta</Title>
 
-                <InputCinzaMenor
-                    placeholder="Moema-SP"
-                />
+                <SubTitle>richard.kosta@gmail.com</SubTitle>
 
-            </ContainerRow>
+                <ContainerLeft>
 
-            <Button>
-                <ButtonTitle>Salvar</ButtonTitle>
-            </Button>
+                    <TitleComponent>Data de nascimento</TitleComponent>
 
-            <Button>
-                <ButtonTitle>Editar</ButtonTitle>
-            </Button>
-            
-        </ContainerLeft>
+                    <InputCinza
+                        placeholder="04/05/1999"
+                    />
+                </ContainerLeft>
+
+                <ContainerLeft>
+
+                    <TitleComponent>CPF</TitleComponent>
+
+                    <InputCinza
+                        placeholder="85968457319"
+                    />
+                </ContainerLeft>
+
+                <ContainerLeft>
+
+                    <TitleComponent>Endereço</TitleComponent>
+
+                    <InputCinza
+                        placeholder="Rua Vicenso Silva, 987"
+                    />
+                </ContainerLeft>
+
+                <ContainerRow>
+
+                    <ContainerLocal>
+
+                        <TitleComponent>CEP</TitleComponent>
+
+                        <InputCinzaMenor
+                            placeholder="06548-909"
+                        />
+                    </ContainerLocal>
+
+                    <ContainerLocal>
+
+                        <TitleComponent>Cidade</TitleComponent>
+
+                        <InputCinzaMenor
+                            placeholder="Moema-SP"
+                        />
+                    </ContainerLocal>
+
+                </ContainerRow>
+
+                <Button>
+                    <ButtonTitle>Salvar</ButtonTitle>
+                </Button>
+
+                <Button>
+                    <ButtonTitle>Editar</ButtonTitle>
+                </Button>
+
+            </Container>
+        </ScrollView>
     )
 }

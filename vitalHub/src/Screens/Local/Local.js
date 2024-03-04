@@ -12,7 +12,6 @@ export const Local = () => {
         <Container>
             <ContainerSpace>
 
-
                 <Mapa
                     source={require('../../Assets/Images/mapa.png')}
                 />

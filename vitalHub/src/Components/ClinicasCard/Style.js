@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const CardClinica = styled.TouchableOpacity`
-    width: 90%;
+    width: 100%;
     height: 84px;
     /* border: 2px; */
     border-color: #496BBA;

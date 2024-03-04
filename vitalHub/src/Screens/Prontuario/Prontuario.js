@@ -1,7 +1,7 @@
 import { ScrollView } from "react-native"
 import { ButtonCard, ButtonText, TextAge } from "../../Components/AppointmentCard/Style"
 import { Button, ButtonCinza } from "../../Components/Button/Style"
-import { Container, ContainerLeft } from "../../Components/Container/Style"
+import { Container, ContainerLeft, ContainerLeftPaddingLeft } from "../../Components/Container/Style"
 import { ContainerRow } from "../../Components/ContainerRow/Style"
 import { FotoPerfil } from "../../Components/FotoPerfil/Style"
 import { ProntuarioInputMaior, ProntuarioInputMenor } from "../../Components/Input/Style"
@@ -14,7 +14,6 @@ export const Prontuario = () => {
         <ScrollView>
             <Container>
 
-
                 <FotoPerfil
                     source={require('../../Assets/Images/Richard.png')}
                 />
@@ -26,23 +25,32 @@ export const Prontuario = () => {
                     <SubTitle>richard.kosta@gmail.com</SubTitle>
                 </ContainerRow>
 
-                <TitleProntuario>Descrição da consulta</TitleProntuario>
+                <ContainerLeftPaddingLeft>
 
-                <ProntuarioInputMaior
-                    placeholder="Descrição"
-                />
+                    <TitleProntuario>Descrição da consulta</TitleProntuario>
 
-                <TitleProntuario>Diagnóstico do paciente</TitleProntuario>
+                    <ProntuarioInputMaior
+                        placeholder="Descrição"
+                    />
+                </ContainerLeftPaddingLeft>
 
-                <ProntuarioInputMenor
-                    placeholder="Diagnóstico"
-                />
+                <ContainerLeftPaddingLeft>
 
-                <TitleProntuario>Prescrição médica</TitleProntuario>
+                    <TitleProntuario>Diagnóstico do paciente</TitleProntuario>
 
-                <ProntuarioInputMaior
-                    placeholder="Prescrição médica"
-                />
+                    <ProntuarioInputMenor
+                        placeholder="Diagnóstico"
+                    />
+                </ContainerLeftPaddingLeft>
+
+                <ContainerLeftPaddingLeft>
+
+                    <TitleProntuario>Prescrição médica</TitleProntuario>
+
+                    <ProntuarioInputMaior
+                        placeholder="Prescrição médica"
+                    />
+                </ContainerLeftPaddingLeft>
 
                 <Button>
                     <ButtonTitle>Salvar</ButtonTitle>

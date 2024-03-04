@@ -19,7 +19,7 @@ export const Input = styled.TextInput.attrs({
 export const ProntuarioInputMaior = styled.TextInput.attrs({
     placeholderTextColor: "#34898f"
 })`
-    width: 90%;
+    width: 94.5%;
     height: 121px;
     font-size: 14px;
     margin-top: 15px;
