@@ -5,8 +5,15 @@ import { Mapa } from "../../Components/Mapa/Style"
 import { SubTitle } from "../../Components/SubTitle/Style"
 import { Title } from "../../Components/Title/Style"
 import { TitleComponent } from "../../Components/TitleComponent/TitleComponent"
+import { HomePaciente } from "../HomePaciente/HomePaciente"
+import { useNavigation } from "@react-navigation/native"
 
 export const Local = () => {
+    const Navigation = useNavigation();
+
+    const VoltarHome = () => {
+        Navigation.navigate(HomePaciente)
+    }
     return (
 
         <Container>
@@ -46,7 +53,7 @@ export const Local = () => {
                 </ContainerRow>
 
 
-                <ContentAccount>
+                <ContentAccount onPress={VoltarHome}>
                     <TextAccountLink>Voltar</TextAccountLink>
                 </ContentAccount>
 

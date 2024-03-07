@@ -16,6 +16,7 @@ import { ProntuarioModal } from "../../Components/ProntuarioModal/ProntuarioModa
 import { FontAwesome6 } from '@expo/vector-icons';
 import { IconModal, ImagemBotao, ViewIcon } from "../../Components/Button/Style";
 import { AgendarModal } from "../../Components/AgendarModal/AgendarModal";
+import { LocalModal } from "../../Components/LocalModal/LocalModal";
 
 const Consultas = [
     { id: 1, nome: "Carlos", situacao: "pendente" },
@@ -67,13 +68,16 @@ const styles = StyleSheet.create({
     }
 })
 
-export const HomePaciente = () => {
+export const HomePaciente = ({navigation}) => {
 
     const [showModalCancel, setShowModalCancel] = useState(false);
+
     const [showModalAppointment, setShowModalAppointment] = useState(false);
 
-    const [showModalAgendar, setShowModalAgendar] = useState(false)
-    
+    const [showModalAgendar, setShowModalAgendar] = useState(false);
+
+    const [showModalLocal, setShowModalLocal] = useState(false);
+
     const handleOpenModal = () => {
         setShowModalAgendar(true);
     };
@@ -81,6 +85,14 @@ export const HomePaciente = () => {
     // Função para fechar o modal
     const handleCloseModal = () => {
         setShowModalAgendar(false);
+    };
+    const handleOpenModalLocal = () => {
+        setShowModalLocal(true);
+    };
+
+    // Função para fechar o modal
+    const handleCloseModalLocal = () => {
+        setShowModalLocal(false);
     };
 
     const [statusLista, setStatusLista] = useState("pendente")
@@ -203,11 +215,17 @@ export const HomePaciente = () => {
                 renderItem={({ item }) =>
 
                     statusLista == item.situacao && (
+                        <TouchableOpacity onPress={handleOpenModalLocal}>
+
                         <AppointmentCardDr
                             situacao={item.situacao}
+                            navigation={navigation}
+                            onPressLocal={() => setShowModalLocal(true)}
                             onPressCancel={() => setShowModalCancel(true)}
                             onPressAppointment={() => setShowModalAppointment(true)}
-                        />
+                            onPress={handleOpenModalLocal}
+                            />
+                            </TouchableOpacity>
                     )
                 }
                 showsVerticalScrollIndicator={false}
@@ -225,6 +243,11 @@ export const HomePaciente = () => {
                 setShowModalAppointment={setShowModalAppointment}
             />
 
+            <LocalModal
+                visible={showModalLocal}
+                setShowModalLocal={setShowModalLocal}
+            />
+
             <ViewIcon>
 
 
@@ -233,7 +256,7 @@ export const HomePaciente = () => {
                     <TouchableOpacity onPress={handleOpenModal}>
                         <ImagemBotao source={require('../../Assets/Images/Estetoscopio.png')} />
                     </TouchableOpacity>
-                    
+
                     <AgendarModal
                         visible={showModalAgendar}
                         setShowModalAgendar={setShowModalAgendar}

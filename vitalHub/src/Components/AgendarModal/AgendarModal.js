@@ -8,17 +8,23 @@ import { ButtonSecondaryTitle, ButtonTitle } from "../ButtonTitle/Style"
 import { ButtonCard, ButtonText } from "../AppointmentCard/Style"
 import { useNavigation } from "@react-navigation/native"
 import { SelecionarClinica } from "../../Screens/SelecionarClinica/SelecionarClinica"
+import { useState } from "react"
 
 export const AgendarModal = ({
-    visible,
+    navigation,
+    visible = true,
     setShowModalAgendar,
     ...rest
 }) => {
 
+    const [tipoConsulta, setTipoConsulta] = useState('')
+
     const Navigation = useNavigation();
 
-    const Continuar = () => {
-        Navigation.navigate(SelecionarClinica)
+    async function handleClose(){
+        await setShowModalAgendar(false)
+
+        Navigation.replace("SelecionarClinica")
     }
 
     return (
@@ -27,6 +33,7 @@ export const AgendarModal = ({
             visible={visible}
             transparent={true}
             animationType="fade"
+            animationOutTiming={0}
         >
             <AppointmentModal>
                 <AppointmentModalView>
@@ -54,11 +61,11 @@ export const AgendarModal = ({
                         placeholder="Informe a localização"
                     />
 
-                    <Button onPress={Continuar}>
+                    <Button onPress={() => handleClose()}>
                         <ButtonTitle>Continuar</ButtonTitle>
                     </Button>
 
-                    <ButtonSecondary onPress={() => setShowModalAgendar(false)}>
+                    <ButtonSecondary onPress={e => setShowModalAgendar(false)}>
                         <ButtonSecondaryTitle>Cancelar</ButtonSecondaryTitle>
                     </ButtonSecondary>
 

@@ -12,6 +12,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { ContentAccount, TextAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { RecuperarSenha } from "../RecuperarSenha/RecuperarSenha"
 import { CriarConta } from "../CriarConta/CriarConta"
+import { HomePaciente } from "../HomePaciente/HomePaciente"
 
 
 
@@ -26,6 +27,10 @@ export const Login = () => {
 
     const LinkCriarConta = () => {
         Navigation.navigate(CriarConta)
+    }
+
+    const EntrarPaciente = () => {
+        Navigation.navigate(HomePaciente)
     }
 
     return (
@@ -48,7 +53,7 @@ export const Login = () => {
                 <LinkMedium>Esqueceu sua senha?</LinkMedium>
             </TouchableOpacity>
 
-            <Button>
+            <Button onPress={EntrarPaciente}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 

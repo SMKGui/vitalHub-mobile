@@ -5,12 +5,19 @@ import { ModalContentSubTitle, ModalInfo, ModalSubTitle, Title } from "../Title/
 import { Button, ButtonSecondary } from "../Button/Style"
 import { ButtonSecondaryTitle, ButtonTitle } from "../ButtonTitle/Style"
 import { ContentAccount, TextAccountLink } from "../ContentAccount/Style"
+import { useNavigation } from "@react-navigation/native"
+import { Perfil } from "../../Screens/Perfil/Perfil"
 
 export const ConfirmarModal = ({
     visible,
     setShowModalConfirm,
     ...rest
 }) => {
+    const Navigation = useNavigation();
+
+    const ConfirmarPerfil = () => {
+        Navigation.navigate(Perfil)
+    }
     return (
         <Modal
             {...rest}

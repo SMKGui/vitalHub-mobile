@@ -10,6 +10,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native"
 import { SelecionarMedico } from "../SelecionarMedico/SelecionarMedico";
+import { HomePaciente } from "../HomePaciente/HomePaciente";
 
 export const SelecionarClinica = () => {
 
@@ -17,6 +18,9 @@ export const SelecionarClinica = () => {
 
     const Continuar = () => {
         Navigation.navigate(SelecionarMedico)
+    }
+    const Voltar = () => {
+        Navigation.navigate(HomePaciente)
     }
 
     return(
@@ -100,7 +104,7 @@ export const SelecionarClinica = () => {
             <ButtonTitle>Continuar</ButtonTitle>
         </Button>
 
-        <ContentAccount>
+        <ContentAccount onPress={Voltar}>
             <TextAccountLink>Cancelar</TextAccountLink>
         </ContentAccount>
 

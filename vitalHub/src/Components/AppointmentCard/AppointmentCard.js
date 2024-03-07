@@ -1,11 +1,13 @@
 import { AntDesign } from '@expo/vector-icons';
 import { ButtonCard, ButtonText, ClockCard, ContainerCardsList, ContentCard, DataProfileCard, ProfileData, ProfileImage, ProfileName, TextAge, TextBold, ViewRow } from './Style';
+import { useState } from 'react';
 
 export const AppointmentCard = ({
     situacao = "pendente",
     onPressCancel,
     onPressAppointment
 }) => {
+    
     return(
             <ContainerCardsList>
 
@@ -56,10 +58,12 @@ export const AppointmentCard = ({
     )
 }
 export const AppointmentCardDr = ({
+    navigation,
     situacao = "pendente",
     onPressCancel,
     onPressAppointment
 }) => {
+    const [profile, setProfile] = useState("Paciente")
     return(
             <ContainerCardsList>
 
@@ -97,7 +101,7 @@ export const AppointmentCardDr = ({
                                         <ButtonText situacao={situacao}>Cancelar</ButtonText>
                                     </ButtonCard>
                                 ) : (
-                                    <ButtonCard onPress={onPressAppointment}>
+                                    <ButtonCard onPress={profile !== "Paciente" ? onPressAppointment : () => navigation.replace("Prontuario")}>
                                         <ButtonText situacao={situacao}>Ver prontuário</ButtonText>
                                     </ButtonCard>
                                 )

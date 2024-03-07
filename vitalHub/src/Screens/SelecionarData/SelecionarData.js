@@ -13,6 +13,8 @@ import { Button } from "../../Components/Button/Style";
 import { ButtonTitle } from "../../Components/ButtonTitle/Style";
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style";
 import { ConfirmarModal } from "../../Components/ConfirmarModal/ConfirmarModal";
+import { useNavigation } from "@react-navigation/native";
+import { SelecionarMedico } from "../SelecionarMedico/SelecionarMedico";
 
 export const SelecionarData = () => {
 
@@ -30,6 +32,12 @@ export const SelecionarData = () => {
 
     const currentDate = new Date();
     const startingDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+
+    const Navigation = useNavigation();
+
+    const Voltar = () => {
+        Navigation.navigate(SelecionarMedico)
+    }
 
     LocaleConfig.locales["pt-br"] = {
         monthNames: [
@@ -136,7 +144,7 @@ export const SelecionarData = () => {
                     />
                 </Button>
 
-                <ContentAccount>
+                <ContentAccount onPress={Voltar}>
                     <TextAccountLink>Cancelar</TextAccountLink>
                 </ContentAccount>
 
