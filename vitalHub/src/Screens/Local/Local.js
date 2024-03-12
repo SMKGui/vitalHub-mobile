@@ -2,6 +2,7 @@ import { Container, ContainerLocal, ContainerLocalEndereco, ContainerRow, Contai
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { InputCinza, InputCinzaMenor } from "../../Components/InputCinza/Style"
 import { Mapa } from "../../Components/Mapa/Style"
+import Maps from "../../Components/Maps/Maps"
 import { SubTitle } from "../../Components/SubTitle/Style"
 import { Title } from "../../Components/Title/Style"
 import { TitleComponent } from "../../Components/TitleComponent/TitleComponent"
@@ -19,9 +20,10 @@ export const Local = () => {
         <Container>
             <ContainerSpace>
 
-                <Mapa
-                    source={require('../../Assets/Images/mapa.png')}
-                />
+                <Mapa>
+                <Maps/>
+
+                </Mapa>
 
                 <Title>Clínica Natureh</Title>
 
