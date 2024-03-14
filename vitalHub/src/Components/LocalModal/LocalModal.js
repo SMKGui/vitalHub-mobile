@@ -18,6 +18,12 @@ export const LocalModal = ({
         Navigation.navigate(Local)
     }
 
+    async function handleClose(){
+        await setShowModalLocal(false)
+
+        Navigation.replace("Local")
+    }
+
     return(
         <Modal 
         {...rest} 
@@ -41,7 +47,7 @@ export const LocalModal = ({
                     </IdadeEmail>
 
                     {/* button */}
-                    <ButtonModal onPress={Local}>
+                    <ButtonModal onPress={() => handleClose()}>
                        
                         <ButtonTitle>Ver Local da Consulta</ButtonTitle>
                        

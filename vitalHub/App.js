@@ -19,6 +19,7 @@ import { SelecionarMedico } from './src/Screens/SelecionarMedico/SelecionarMedic
 import { SelecionarData } from './src/Screens/SelecionarData/SelecionarData';
 import { HomeMedico } from './src/Screens/HomeMedico/HomeMedico';
 import { ProntuarioPronto } from './src/Screens/ProntuarioPronto/ProntuarioPronto';
+import CameraProntuario from './src/Components/Camera/Camera';
 
 const Stack = createNativeStackNavigator();
 
@@ -122,6 +123,11 @@ export default function App() {
           name="ProntuarioPronto"
           component={ProntuarioPronto}
           options={{title: "ProntuarioPronto"}}
+        />
+        <Stack.Screen
+          name="CameraProntuario"
+          component={CameraProntuario}
+          options={{title: "CameraProntuario"}}
         />
       </Stack.Navigator>
     </NavigationContainer>

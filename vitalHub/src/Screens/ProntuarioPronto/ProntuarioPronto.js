@@ -12,15 +12,24 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { HomePaciente } from "../HomePaciente/HomePaciente"
 import { useNavigation } from "@react-navigation/native"
+import { CameraPage } from "../../Components/Camera/Camera"
+import { useState } from "react"
 
 
 export const ProntuarioPronto = () => {
+
+    const [showCamera, setShowCamera] = useState(false);
 
     const Navigation = useNavigation();
 
     const Voltar = () => {
         Navigation.navigate(HomePaciente)
     }
+
+    const handleOpenCamera = () => {
+        Navigation.navigate('CameraProntuario');
+      };
+
 
     return (
         <ScrollView>
@@ -75,7 +84,7 @@ export const ProntuarioPronto = () => {
                     </ContainerLeft>
 
                     <ContainerRow>
-                        <CameraButton>
+                        <CameraButton onPress={handleOpenCamera}>
                             <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
                             <CameraButtonTitle>Enviar</CameraButtonTitle>
                         </CameraButton>
