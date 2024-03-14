@@ -12,7 +12,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { HomePaciente } from "../HomePaciente/HomePaciente"
 import { useNavigation } from "@react-navigation/native"
-import { CameraPage } from "../../Components/Camera/Camera"
 import { useState } from "react"
 
 
