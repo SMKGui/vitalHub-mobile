@@ -12,22 +12,35 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ContentAccount, TextAccountLink } from "../../Components/ContentAccount/Style"
 import { HomePaciente } from "../HomePaciente/HomePaciente"
 import { useNavigation } from "@react-navigation/native"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
+import { Image } from "react-native"
 
 
-export const ProntuarioPronto = () => {
+export const ProntuarioPronto = ({ navigation, route }) => {
+    const [savePhoto, setSavePhoto] = useState(null)
 
     const [showCamera, setShowCamera] = useState(false);
 
-    const Navigation = useNavigation();
+    // const Navigation = useNavigation();
 
     const Voltar = () => {
-        Navigation.navigate(HomePaciente)
+        navigation.navigate(HomePaciente)
     }
 
     const handleOpenCamera = () => {
-        Navigation.navigate('CameraProntuario');
+        navigation.navigate('CameraProntuario');
       };
+
+      useEffect(() => {
+        // async function xpto  ()  {
+            if( route.params != undefined ){
+                setSavePhoto( route.params.photo )
+            }
+        // };
+
+        // xpto()
+      }, [route])
 
 
     return (
@@ -77,8 +90,15 @@ export const ProntuarioPronto = () => {
 
                     <TitleProntuario>Exames médicos</TitleProntuario>
                     <CaixaProntuarioRow>
-                        <SimpleLineIcons name="exclamation" size={24} color="black" />
-                        <TextCaixaProntuario>Nenhuma foto informada</TextCaixaProntuario>
+                        {
+                            savePhoto != null 
+                                ? ( <Image style={{ width : '100%', height : 100}} source={{ uri : route.params.photo }} />)
+                                : ( <>
+                                        <SimpleLineIcons name="exclamation" size={24} color="black" />
+                                        <TextCaixaProntuario>Nenhuma foto informada</TextCaixaProntuario>
+                                    </>)
+                        }
+                        
                     </CaixaProntuarioRow>
                     </ContainerLeft>
 
@@ -87,7 +107,7 @@ export const ProntuarioPronto = () => {
                             <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
                             <CameraButtonTitle>Enviar</CameraButtonTitle>
                         </CameraButton>
-                        <CancelarButton>
+                        <CancelarButton onPress={() => setSavePhoto(null)}>
                             <CancelarText>Cancelar</CancelarText>
                         </CancelarButton>
                     </ContainerRow>

@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 import { FontAwesome } from '@expo/vector-icons'
 import * as MediaLibrary from 'expo-media-library'
 
-export default function CameraProntuario() {
+export default function CameraProntuario({navigation}) {
 
     const cameraRef = useRef(null)
     const [photo, setPhoto] = useState(null)
@@ -27,10 +27,16 @@ export default function CameraProntuario() {
             setPhoto(photo.uri)
 
             setOpenModal(true)
-
-            console.log(photo);
         }
     }
+    
+    async function UploadPhoto() {
+        setOpenModal(false)
+
+        await navigation.navigate('ProntuarioPronto', { photo : photo });
+    }
+
+
 
     function ClearPhoto() {
         setPhoto(null)
@@ -64,9 +70,9 @@ export default function CameraProntuario() {
                         <TouchableOpacity style={styles.btnClear} onPress={() => ClearPhoto()}>
                             <FontAwesome name='trash' size={35} color='#ff0000' />
                         </TouchableOpacity>
-                        {/* <TouchableOpacity style={styles.btnUpload} onPress={() => UploadPhoto()}>
+                        <TouchableOpacity style={styles.btnUpload} onPress={() => UploadPhoto()}>
                             <FontAwesome name='upload' size={35} color='#121212' />
-                        </TouchableOpacity> */}
+                        </TouchableOpacity>
                     </View>
                     <Image
                         style={{ width: '100%', height: 500, borderRadius: 15 }}
