@@ -13,11 +13,28 @@ import { ContentAccount, TextAccount, TextAccountLink } from "../../Components/C
 import { RecuperarSenha } from "../RecuperarSenha/RecuperarSenha"
 import { CriarConta } from "../CriarConta/CriarConta"
 import { HomePaciente } from "../HomePaciente/HomePaciente"
+import { useState } from "react"
 
 
 
 
 export const Login = () => {
+
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
+
+    async function Login(){
+        api.post('/Login', {
+            email : email,
+            senha : senha
+        }).then(response => {
+            console.log(response);
+        }).catch(error => {
+            console.log(error);
+        })
+
+        // Navigation.navigate("Main")
+    }
 
     const Navigation = useNavigation();
 
@@ -44,10 +61,17 @@ export const Login = () => {
 
             <Input
                 placeholder="Usuário ou E-mail"
+
+                value={email}
+                onChange={event => setEmail(event.target.text)}
             />
 
             <Input
                 placeholder="Senha"
+                secureTextEntry={true}
+
+                value={senha}
+                onChangeText={(txt) => setSenha(txt)}
             />
             <TouchableOpacity onPress={ForgotSenha}>
                 <LinkMedium>Esqueceu sua senha?</LinkMedium>
